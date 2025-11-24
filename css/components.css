@@ -1,0 +1,176 @@
+/* components.css
+   Buttons, cards, modal, forms (minimal comments)
+*/
+
+/* Buttons */
+.btn-primary {
+  background: linear-gradient(90deg, var(--accent), var(--accent-2));
+  color: #04121a;
+  padding: 10px 16px;
+  border-radius: 8px;
+  box-shadow: 0 6px 18px rgba(0,188,212,0.08);
+  transition: transform 160ms ease, box-shadow 160ms ease;
+}
+
+.btn-primary:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 30px rgba(0,188,212,0.12);
+}
+
+.btn-outline {
+  background: transparent;
+  color: var(--text);
+  border: 1px solid rgba(255,255,255,0.06);
+  padding: 10px 14px;
+  border-radius: 8px;
+}
+
+.btn-ghost {
+  background: transparent;
+  color: var(--muted);
+  font-weight: 600;
+}
+
+/* Cards (projects / skill cards) */
+.card {
+  background: linear-gradient(180deg, rgba(255,255,255,0.01), rgba(255,255,255,0.02));
+  border: 1px solid rgba(255,255,255,0.03);
+  padding: 18px;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+}
+
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+}
+
+/* Project card specifics */
+.project-card {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  transition: transform 180ms ease, box-shadow 180ms ease;
+}
+
+.project-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 18px 40px rgba(0,0,0,0.45);
+}
+
+.project-thumb {
+  width: 100%;
+  height: 160px;
+  border-radius: 8px;
+  object-fit: cover;
+  background: linear-gradient(90deg, rgba(0,0,0,0.15), rgba(255,255,255,0.02));
+}
+
+/* Badges / tech tags */
+.badge {
+  display: inline-block;
+  padding: 6px 10px;
+  border-radius: 999px;
+  font-size: 0.8rem;
+  background: rgba(255,255,255,0.03);
+  color: var(--muted);
+  margin-right: 8px;
+}
+
+/* Modal */
+.modal {
+  position: fixed;
+  inset: 0;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 200;
+}
+
+.modal[aria-hidden="false"] {
+  display: flex;
+}
+
+.modal-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(4,6,8,0.6);
+  backdrop-filter: blur(3px);
+}
+
+.modal-panel {
+  position: relative;
+  width: 90%;
+  max-width: 780px;
+  background: var(--surface);
+  border-radius: 12px;
+  padding: 22px;
+  z-index: 210;
+  box-shadow: 0 18px 40px rgba(0,0,0,0.6);
+}
+
+.modal-close {
+  position: absolute;
+  right: 12px;
+  top: 10px;
+  background: transparent;
+  border: none;
+  color: var(--muted);
+  font-size: 1.1rem;
+  cursor: pointer;
+}
+
+/* Contact form */
+.contact-form {
+  display: grid;
+  gap: 12px;
+  max-width: 720px;
+}
+
+.contact-form label {
+  display: block;
+}
+
+.contact-form input[type="text"],
+.contact-form input[type="email"],
+.contact-form textarea {
+  width: 100%;
+  padding: 10px 12px;
+  border-radius: 8px;
+  border: 1px solid rgba(255,255,255,0.04);
+  background: rgba(255,255,255,0.02);
+  color: var(--text);
+  font-size: 0.95rem;
+}
+
+.contact-form .form-error {
+  color: #ffb4b4;
+  font-size: 0.85rem;
+  margin-top: 6px;
+}
+
+/* Footer small */
+.site-footer {
+  border-top: 1px solid rgba(255,255,255,0.03);
+  padding: 18px 0;
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+
+/* Small responsive adjustments */
+@media (max-width: 900px) {
+  .projects-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .projects-grid {
+    grid-template-columns: 1fr;
+  }
+  .avatar-wrap {
+    width: 220px;
+    height: 220px;
+  }
+}

@@ -1,0 +1,89 @@
+/* base.css
+   Resets and basic typography
+   (kept minimal and straightforward)
+*/
+
+/* Import font */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap');
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-sans);
+  background: var(--bg);
+  color: var(--text);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  line-height: 1.45;
+  font-size: 16px;
+}
+
+/* Container utility */
+.container {
+  width: 100%;
+  max-width: var(--max-width);
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: var(--container-padding);
+  padding-right: var(--container-padding);
+}
+
+/* Headings */
+h1, h2, h3 {
+  margin: 0 0 12px 0;
+  line-height: 1.12;
+  font-weight: 700;
+}
+
+h1 {
+  font-size: 2rem;
+}
+
+h2 {
+  font-size: 1.3rem;
+}
+
+/* Links */
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* Buttons basic */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 10px 14px;
+  border-radius: 8px;
+  cursor: pointer;
+  border: none;
+  font-weight: 600;
+}
+
+/* Accessible focus state */
+:focus {
+  outline: 3px solid rgba(0,188,212,0.15);
+  outline-offset: 3px;
+}
+
+/* Utility spacing */
+.u-mb {
+  margin-bottom: var(--space-md);
+}
+
+/* Small helpers */
+.text-muted {
+  color: var(--muted);
+  font-size: 0.95rem;
+}
